@@ -5,7 +5,7 @@ function Chakras() {
     {
       title: "Step into Your Energy Centers",
       text: "In reality, your physical body is the product of your chakras — the subtle energy centers that shape your body, mind, and consciousness. Did you know there are 114 chakras in the human body? For simplicity, the 7 major chakras along your spine are the most widely known, while the other 107 subtle centers are spread throughout your body. These chakras are like wheels or vortexes of energy, psychic nodes that guide the flow of your inner system.You cannot see this energy flow — just like the electric charge flowing through a coil is invisible, yet when it powers a lamp, we see the light. Similarly, our energy centers vibrate subtly, guiding our thoughts, actions, and life experiences. The effects are visible in your daily life, even if the flow itself remains unseen.Your consciousness is intimately linked with these energy centers. Each chakra is a doorway where awareness meets subtle energy, shaping how you feel, think, and interact with the world. Once you begin to activate and harmonize them, you will start to feel their presence and effects.Are you ready to feel it?",
-      image: "/chakras1.jpg",
+      image: "/chakra1.jpg",
     },
     {
       title: "Mūlādhāra – The Root Energy Point",
@@ -60,7 +60,11 @@ function Chakras() {
       style={{
         minHeight: "100vh",
         padding: "40px 20px",
-        backgroundColor: "#fafafa",
+        backgroundImage: "url('/your-background.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        color: "#fff",
       }}
     >
       <h2
@@ -68,46 +72,49 @@ function Chakras() {
           fontSize: "2.5rem",
           marginBottom: "2rem",
           textAlign: "center",
-          color: "#333",
+          textShadow: "2px 2px 8px rgba(0,0,0,0.6)",
         }}
       >
         The Dynamics of Consciousness & Energy
       </h2>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "40px" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "40px",
+        }}
+      >
         {chakras.map((chakra, index) => (
           <div
             key={index}
             style={{
               display: "flex",
-              flexDirection: "row",
+              flexDirection: "column", // stack image and text on mobile
               alignItems: "center",
               gap: "20px",
-              background: "#fff",
+              background: "rgba(0, 0, 0, 0.5)", // semi-transparent overlay
               padding: "20px",
               borderRadius: "12px",
-              boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+              boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
             }}
           >
-            {/* Image */}
             <img
               src={chakra.image}
               alt={chakra.title}
               style={{
-                width: "200px",
-                height: "150px",
+                width: "100%",
+                maxWidth: "400px",
+                height: "auto",
                 borderRadius: "8px",
                 objectFit: "cover",
-                flexShrink: 0,
               }}
             />
-
-            {/* Text */}
             <div>
-              <h3 style={{ marginBottom: "10px", color: "#444" }}>
+              <h3 style={{ marginBottom: "10px", color: "#fff" }}>
                 {chakra.title}
               </h3>
-              <p style={{ fontSize: "1rem", lineHeight: "1.6", color: "#555" }}>
+              <p style={{ fontSize: "1rem", lineHeight: "1.6", color: "#eee" }}>
                 {chakra.text}
               </p>
             </div>
